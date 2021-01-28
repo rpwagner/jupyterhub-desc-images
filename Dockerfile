@@ -11,4 +11,4 @@ RUN wget https://downloads.globus.org/globus-connect-personal/linux/stable/globu
 RUN tar -xzvf /tmp/globusconnectpersonal-latest.tgz -C /opt
 RUN mv $(find /opt -type 'd' -name 'globus*' -maxdepth 1) /opt/gcp
 
-USER $NB_USER
+USER $NB_UID
