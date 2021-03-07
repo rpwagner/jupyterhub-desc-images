@@ -14,6 +14,7 @@ RUN mv $(find /opt -type 'd' -name 'globus*' -maxdepth 1) /opt/gcp
 COPY initenv.sh /usr/local/bin/initenv.sh
 COPY tini-wrapper /usr/local/bin/tini-wrapper
 
+RUN apt-get update
 RUN apt-get install libnss-wrapper
 
 # Add Tini
