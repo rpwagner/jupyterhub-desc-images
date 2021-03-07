@@ -10,4 +10,4 @@ while (( "$#" )) && [ $1 != '--' ]; do
   shift
 done
 
-exec /usr/bin/tini "$@" "${preargs[@]}"
+exec /usr/local/sbin/tini "$@" "${preargs[@]}"
