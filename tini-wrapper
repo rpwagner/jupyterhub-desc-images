@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# workaround for 'tini' to reposition Jupyterhub spawner's
+# insertion of leading arguments "--ip=NNN" and "--port=NNN" to 
+# the notebook command line; interferes with our tini->initenv->jupyterhub-singleuser chain
+
+declare -a preargs
+while (( "$#" )) && [ $1 != '--' ]; do
+  preargs+=($1)
+  shift
+done
+
+exec /usr/bin/tini "$@" "${preargs[@]}"
