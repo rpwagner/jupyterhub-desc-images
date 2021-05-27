@@ -17,9 +17,15 @@ else:
     authorizer = globus_sdk.AccessTokenAuthorizer(TRANSFER_TOKEN)
     tc = globus_sdk.TransferClient(authorizer=authorizer)
 
+    gcp_display_name = "Demo Jupyter GCP Endpoint"
+    # This can be set using singleuser.extraEnv 
+    gcp_name_env = os.getenv('GCP_DISPLAY_NAME')
+    if gcp_name_env:
+        gcp_display_name = gcp_name_env
+
     ENDPOINT_DOCUMENT = {
         "DATA_TYPE": "endpoint",
-        "display_name": "Demo Jupyter GCP Endpoint",
+        "display_name": gcp_display_name,
         "description": "Example GCP endpoint used in a Jupyter notebook server",
         "is_globus_connect": True,
     }
