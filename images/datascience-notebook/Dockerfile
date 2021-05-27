@@ -14,11 +14,6 @@ COPY tini-wrapper /usr/local/bin/tini-wrapper
 COPY setupgcp.py /usr/local/bin/setupgcp.py
 
 RUN apt-get update
-RUN apt-get install libnss-wrapper
-
-# Add Tini
-ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/sbin/tini
-RUN chmod +x /usr/local/sbin/tini
+RUN apt-get install libnss-wrapper tini
 
 USER $NB_UID
