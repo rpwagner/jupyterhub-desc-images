@@ -1,0 +1,10 @@
+rpy2[all]
+papermill
+scanpy
+numpy
+pandas
+seaborn
+louvain>=0.6
+python-igraph
+gprofiler-official
+combat

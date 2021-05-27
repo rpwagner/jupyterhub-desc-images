@@ -31,4 +31,4 @@ else:
     }
     create_result = tc.create_endpoint(ENDPOINT_DOCUMENT)
     setup_key = create_result["globus_connect_setup_key"]
-    pid = subprocess.run(['/opt/gcp/globusconnectpersonal', '-setup', setup_key])
+    subprocess.call(['/opt/gcp/globusconnectpersonal', '-setup', setup_key])

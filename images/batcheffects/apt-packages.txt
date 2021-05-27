@@ -1,0 +1,13 @@
+libcairo2-dev
+zlib1g-dev
+libxml2-dev
+libgmp-dev
+libboost-all-dev
+libudunits2-dev
+software-properties-common
+libudunits2-dev
+libgdal-dev
+libgeos-dev
+libproj-dev
+libnode-dev
+libgmp3-dev
