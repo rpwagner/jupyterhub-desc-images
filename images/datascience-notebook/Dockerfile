@@ -13,7 +13,4 @@ COPY initenv.sh /usr/local/bin/initenv.sh
 COPY tini-wrapper /usr/local/bin/tini-wrapper
 COPY setupgcp.py /usr/local/bin/setupgcp.py
 
-RUN apt-get update
-RUN apt-get install libnss-wrapper tini
-
 USER $NB_UID
