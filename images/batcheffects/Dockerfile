@@ -1,10 +1,10 @@
 ################## BASE IMAGE ######################
 
-FROM rpwagner/datascience-notebook-poc
+FROM jupyter/datascience-notebook
 
 ################## METADATA ######################
 
-LABEL base_image="rpwagner/datascience-notebook-poc"
+LABEL base_image="jupyter/datascience-notebook"
 LABEL version="0.1"
 LABEL software="batcheffects"
 LABEL software.version="0.1.0"

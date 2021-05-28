@@ -1,5 +1,6 @@
 bison
 flex
+emacs-nox
 libcairo2-dev
 zlib1g-dev
 libxml2-dev

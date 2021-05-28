@@ -1,3 +1,5 @@
+globus_sdk
+globus-cli
 rpy2[all]
 papermill
 scanpy
