@@ -24,8 +24,8 @@ RUN apt-get update && xargs apt-get install -y < /tmp/apt-packages.txt
 # Install additional Python packages
 RUN pip install -r /tmp/python-packages.txt
 
-# Install additional R packages from conda
-RUN conda install -y -c conda-forge --file /tmp/conda-packages.txt # Required by umap-learn
+# Install additional R packages from conda-forge using mamba
+RUN mamba install -y -c conda-forge --file /tmp/conda-packages.txt # Required by umap-learn
 
 # Install additional R packages via Rscript
 RUN Rscript -e 'install.packages("devtools", repos = "http://cran.us.r-project.org")'
@@ -40,7 +40,7 @@ RUN Rscript -e 'devtools::install_github(repo = "welch-lab/liger", ref = "v0.5.0
 RUN Rscript -e 'devtools::install_github(repo = "mlampros/ClusterR", ref = "424febaa587409fc554fb49c9d8dc8edd99d5578")'
 RUN Rscript -e 'devtools::install_github(repo = "SaskiaFreytag/schex", ref = "4b7d72d54bdf1812148afba06b43676f994382f6")'
 RUN Rscript -e 'devtools::install_github(repo = "powellgenomicslab/Nebulosa", ref = "0.99.92")'
-RUN Rscript -e 'install.packages("BiocManager", repos = "http://cran.us.r-project.org*22);BiocManager::install(c( \
+RUN Rscript -e 'install.packages("BiocManager", repos = "http://cran.us.r-project.org"); BiocManager::install(c( \
   "AnnotationDbi", \
   "RUVnormalize", \
   "scRNAseq", \
